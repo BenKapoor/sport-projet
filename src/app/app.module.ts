@@ -1,18 +1,36 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { EquipeListComponent } from './equipe/equipe-list/equipe-list.component';
+import { EquipesService } from './services/equipes.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { HeaderComponent } from './header/header.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { SeasonService } from './services/season.service';
+import { SingleEquipeComponent } from './equipe/single-equipe/single-equipe.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EquipeListComponent,
+    SingleEquipeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FlexLayoutModule
   ],
-  providers: [],
+  providers: [
+    EquipesService,
+    SeasonService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
