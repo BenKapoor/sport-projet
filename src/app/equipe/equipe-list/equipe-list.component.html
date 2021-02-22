@@ -1,43 +1,64 @@
-<div fxLayout="column flex-container">
+<div class="flex-global">
+  <div layout="flex-container" class="flex-container">
   
-      <button fxLayout="row flex-item" 
-              style="background-image: url('{{ team.league.flag }}'); 
-                    background-repeat: no-repeat; 
-                    background-size: 40%;
-                    background-blend-mode: overlay;
-                    background-position-x: right;
-                    background-position-y: center;"
-              *ngFor="let team of teams; let i = index"
-              >
-          <div class="container-league">
-            <h1 class="list-group-item-heading">
-              {{ team.league.name }}
-            </h1>
-            
-            <h2>League : {{ team.league.country }}{{ team.league.name }}</h2>
-            <!-- <img class="img" style="max-width:30px;" *ngIf="team.league.flag" [src]="team.league.flag"> -->
-            <img class="img" style="max-width:80px;" *ngIf="team.league.logo" [src]="team.league.logo">
-            
-          </div>
-          
-          <div>
-            <div>
-              <h2>Home Town : {{ team.homeTeam.team_name }} VS {{ team.awayTeam.team_name }} : Away Team</h2>
-              <img class="img" style="max-width:70px;" *ngIf="team.homeTeam.logo" [src]="team.homeTeam.logo">
-              <img class="img" style="max-width:70px;" *ngIf="team.awayTeam.logo" [src]="team.awayTeam.logo">
-            </div>
-            
-            
-            
+    <button layout="flex-item" class="flex-items"
+            style="background-image: url('{{ team.league.flag }}'); 
+                  background-repeat: no-repeat; 
+                  background-size: 40%;
+                  background-blend-mode: overlay;
+                  background-position-x: right;
+                  background-position-y: center;"
+            *ngFor="let team of teams; let i = index"
+    >
+      <div class="container-league">
+        <h1 class="list-group-item-heading">
+          {{ team.league.name }}
+        </h1>
+        <h2>League : {{ team.league.country }}{{ team.league.name }}</h2>
+        <!-- <img class="img" style="max-width:30px;" *ngIf="team.league.flag" [src]="team.league.flag"> -->
+        <img class="img" style="max-width:80px;" *ngIf="team.league.logo" [src]="team.league.logo">
+      </div>
+      
+      <div>
+        <div>
+          <h2>
+            <img class="img-icon" src="./../../../assets/img/home.png"> {{ team.homeTeam.team_name }} VS {{ team.awayTeam.team_name }} 
+            <img class="img-icon" src="./../../../assets/img/airplane.png">
+          </h2>
+          <img class="img" style="max-width:70px;" *ngIf="team.homeTeam.logo" [src]="team.homeTeam.logo">
+          <img class="img" style="max-width:70px;" *ngIf="team.awayTeam.logo" [src]="team.awayTeam.logo">
+        </div>
+        <div>
+          <h1>Score : </h1>
+          <h3>Domicile : {{ team.goalsHomeTeam }} - {{ team.goalsAwayTeam }} : Exterieur</h3>
+        </div>
+      </div>
   
-            <div>
-              <h1>Score : </h1>
-              <h3>Domicile : {{ team.goalsHomeTeam }} - {{ team.goalsAwayTeam }} : Exterieur</h3>
-            </div>
-          </div>
-          
+    </button>
+  
+  </div>
 
-        </button>
-    
-  
+  <div class="flex-container-side">
+    <div class="card">
+      <img src="img_avatar.png" alt="Avatar" style="width:100%">
+      <div class="container">
+        <h4><b>John Doe</b></h4>
+        <p>Architect & Engineer</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img_avatar.png" alt="Avatar" style="width:100%">
+      <div class="container">
+        <h4><b>John Doe</b></h4>
+        <p>Architect & Engineer</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img_avatar.png" alt="Avatar" style="width:100%">
+      <div class="container">
+        <h4><b>John Doe</b></h4>
+        <p>Architect & Engineer</p>
+      </div>
+    </div>
+  </div>
 </div>
